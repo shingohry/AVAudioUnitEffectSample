@@ -16,6 +16,8 @@
 		C92DCB2F1A95EB460096BF2B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C92DCB2D1A95EB460096BF2B /* LaunchScreen.xib */; };
 		C92DCB3B1A95EB460096BF2B /* AVAudioUnitEffectSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C92DCB3A1A95EB460096BF2B /* AVAudioUnitEffectSampleTests.m */; };
 		C92DCB451A95EBC50096BF2B /* loop.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C92DCB441A95EBC50096BF2B /* loop.m4a */; };
+		C94EEBD11A96D2AA00FCAD77 /* EQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94EEBD01A96D2AA00FCAD77 /* EQViewController.m */; };
+		C94EEBD41A96D31A00FCAD77 /* ReverbViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94EEBD31A96D31A00FCAD77 /* ReverbViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,10 @@
 		C92DCB391A95EB460096BF2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C92DCB3A1A95EB460096BF2B /* AVAudioUnitEffectSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVAudioUnitEffectSampleTests.m; sourceTree = "<group>"; };
 		C92DCB441A95EBC50096BF2B /* loop.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = loop.m4a; sourceTree = "<group>"; };
+		C94EEBCF1A96D2AA00FCAD77 /* EQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EQViewController.h; sourceTree = "<group>"; };
+		C94EEBD01A96D2AA00FCAD77 /* EQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EQViewController.m; sourceTree = "<group>"; };
+		C94EEBD21A96D31A00FCAD77 /* ReverbViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReverbViewController.h; sourceTree = "<group>"; };
+		C94EEBD31A96D31A00FCAD77 /* ReverbViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReverbViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +99,10 @@
 				C92DCB231A95EB460096BF2B /* FirstViewController.m */,
 				C92DCB251A95EB460096BF2B /* SecondViewController.h */,
 				C92DCB261A95EB460096BF2B /* SecondViewController.m */,
+				C94EEBCF1A96D2AA00FCAD77 /* EQViewController.h */,
+				C94EEBD01A96D2AA00FCAD77 /* EQViewController.m */,
+				C94EEBD21A96D31A00FCAD77 /* ReverbViewController.h */,
+				C94EEBD31A96D31A00FCAD77 /* ReverbViewController.m */,
 				C92DCB281A95EB460096BF2B /* Main.storyboard */,
 				C92DCB2B1A95EB460096BF2B /* Images.xcassets */,
 				C92DCB2D1A95EB460096BF2B /* LaunchScreen.xib */,
@@ -229,6 +239,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C92DCB271A95EB460096BF2B /* SecondViewController.m in Sources */,
+				C94EEBD11A96D2AA00FCAD77 /* EQViewController.m in Sources */,
+				C94EEBD41A96D31A00FCAD77 /* ReverbViewController.m in Sources */,
 				C92DCB211A95EB460096BF2B /* AppDelegate.m in Sources */,
 				C92DCB241A95EB460096BF2B /* FirstViewController.m in Sources */,
 				C92DCB1E1A95EB460096BF2B /* main.m in Sources */,
@@ -422,6 +434,7 @@
 				C92DCB401A95EB460096BF2B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C92DCB411A95EB460096BF2B /* Build configuration list for PBXNativeTarget "AVAudioUnitEffectSampleTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +443,7 @@
 				C92DCB431A95EB460096BF2B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
