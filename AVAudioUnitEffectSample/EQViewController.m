@@ -137,7 +137,7 @@
 - (IBAction)didChangeEnableSwitchValue:(id)sender
 {
     UISwitch *enableSwitch = (UISwitch *)sender;
-    self.audioUnitEQ.bypass = enableSwitch.isOn;
+    self.audioUnitEQ.bypass = !enableSwitch.isOn;
 }
 
 @end

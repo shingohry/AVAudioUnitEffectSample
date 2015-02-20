@@ -420,7 +420,7 @@
         <!--AVAudioUnitReverb-->
         <scene sceneID="KeX-Dd-0xu">
             <objects>
-                <viewController id="1zh-kI-WJq" sceneMemberID="viewController">
+                <viewController id="1zh-kI-WJq" customClass="ReverbViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g5y-ud-iHg"/>
                         <viewControllerLayoutGuide type="bottom" id="lCc-4T-DRX"/>
@@ -434,6 +434,9 @@
                                 <subviews>
                                     <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="XyL-Yy-FId">
                                         <rect key="frame" x="14" y="35" width="292" height="31"/>
+                                        <connections>
+                                            <action selector="didChangeMixSliderValue:" destination="1zh-kI-WJq" eventType="valueChanged" id="N6B-vY-kcO"/>
+                                        </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dry" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MAq-Xc-P9k">
                                         <rect key="frame" x="16" y="62" width="44" height="20"/>
@@ -454,6 +457,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="h2b-d4-6Ub"/>
                                     <constraint firstAttribute="height" constant="100" id="v7r-Te-wuR"/>
@@ -466,9 +470,13 @@
                                     <constraint firstAttribute="width" constant="320" id="9Al-PV-rkC"/>
                                     <constraint firstAttribute="height" constant="162" id="ilp-id-nWs"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="1zh-kI-WJq" id="v4v-W5-962"/>
+                                    <outlet property="delegate" destination="1zh-kI-WJq" id="Elw-2B-Xse"/>
+                                </connections>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BkA-kl-3Rb">
-                                <rect key="frame" x="360" y="476" width="30" height="30"/>
+                                <rect key="frame" x="285" y="476" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="bce-KK-XlR"/>
                                     <constraint firstAttribute="height" constant="30" id="w18-Y8-t92"/>
@@ -476,37 +484,31 @@
                                 <state key="normal" title="Play">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="didTapPlayButton:" destination="1zh-kI-WJq" eventType="touchUpInside" id="kmx-8b-u1o"/>
+                                </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wlD-9V-vma">
-                                <rect key="frame" x="209" y="475" width="51" height="31"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preset" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIu-VI-vCP">
+                                <rect key="frame" x="156" y="226" width="80" height="22"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="Ipt-dJ-Dni"/>
-                                    <constraint firstAttribute="width" constant="49" id="Mtp-HK-BVq"/>
+                                    <constraint firstAttribute="width" constant="80" id="mwu-3b-cJk"/>
+                                    <constraint firstAttribute="height" constant="22" id="rTi-gD-icp"/>
                                 </constraints>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nvF-TS-Dv6">
-                                <rect key="frame" x="156" y="480" width="52" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="52" id="4RQ-tv-YhO"/>
-                                    <constraint firstAttribute="height" constant="22" id="dWp-05-keJ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wlD-9V-vma" firstAttribute="centerY" secondItem="nvF-TS-Dv6" secondAttribute="centerY" id="4DJ-wH-1dt"/>
                             <constraint firstAttribute="centerY" secondItem="oOZ-pb-Vac" secondAttribute="centerY" constant="154" id="5q0-ci-1Lv"/>
+                            <constraint firstItem="Eet-aC-Dwe" firstAttribute="top" secondItem="IIu-VI-vCP" secondAttribute="bottom" constant="8" id="MYa-Sl-VMQ"/>
                             <constraint firstAttribute="centerX" secondItem="Eet-aC-Dwe" secondAttribute="centerX" id="QRg-Fh-UL8"/>
-                            <constraint firstAttribute="centerX" secondItem="wlD-9V-vma" secondAttribute="centerX" constant="66.5" id="Uqk-hl-jCx"/>
                             <constraint firstAttribute="centerX" secondItem="oOZ-pb-Vac" secondAttribute="centerX" id="XjN-hJ-4d8"/>
-                            <constraint firstAttribute="centerY" secondItem="wlD-9V-vma" secondAttribute="centerY" constant="-190.5" id="YY0-uO-LVT"/>
-                            <constraint firstItem="wlD-9V-vma" firstAttribute="leading" secondItem="nvF-TS-Dv6" secondAttribute="trailing" constant="1" id="ZGD-D2-Ad3"/>
                             <constraint firstAttribute="centerY" secondItem="Eet-aC-Dwe" secondAttribute="centerY" constant="-37" id="fR4-Li-Os0"/>
+                            <constraint firstAttribute="centerX" secondItem="IIu-VI-vCP" secondAttribute="centerX" constant="104" id="hZq-4e-Uzg"/>
                             <constraint firstAttribute="centerY" secondItem="BkA-kl-3Rb" secondAttribute="centerY" constant="-191" id="ukn-uU-gki"/>
-                            <constraint firstAttribute="centerX" secondItem="BkA-kl-3Rb" secondAttribute="centerX" constant="-75" id="vdM-8x-dip"/>
+                            <constraint firstAttribute="centerX" secondItem="BkA-kl-3Rb" secondAttribute="centerX" id="vdM-8x-dip"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="AVAudioUnitReverb" id="sGh-gM-jDU"/>
